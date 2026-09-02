@@ -1,0 +1,27 @@
+[project]
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["python", "cli", "telegram-bot", "webhooks", "notifications", "automation", "event-routing"]
+name = "tool-gateway"
+version = "0.2.0"
+description = "Local Telegram, webhook, and machine-target ingress with durable delivery receipts"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+tool-gateway = "tool_gateway.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["tool_gateway*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[project.urls]
+Repository = "https://github.com/abetor/gateway"
+Documentation = "https://github.com/abetor/gateway#readme"
+Issues = "https://github.com/abetor/gateway/issues"
