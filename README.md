@@ -1,4 +1,4 @@
-# tool-gateway
+# gateway
 
 Local Telegram and webhook gateway for CLI tools, with authenticated routing, durable delivery, and JSON audit receipts.
 
@@ -11,7 +11,7 @@ If every tool implements Telegram credentials, webhook authentication, retries,
 deduplication, and logging independently, secrets spread across repositories and
 delivery behavior becomes inconsistent.
 
-`tool-gateway` centralizes those boundaries behind one CLI. Other tools call the
+`gateway` centralizes those boundaries behind one CLI. Other tools call the
 CLI as an external process and do not import gateway code or know channel
 credentials.
 
@@ -63,7 +63,8 @@ See [docs/DESIGN.md](docs/DESIGN.md) for contracts and tradeoffs.
 
 ## Quick start
 
-Create an environment and install the checkout:
+The repository is `gateway`; the distribution and CLI are both `tool-gateway`, and the
+Python package is `tool_gateway`. Create an environment and install the checkout:
 
 ```bash
 python3 -m venv .venv
@@ -170,9 +171,8 @@ data directory; inspect `log/dispatch.jsonl` for `"exit": 0`.
   covered hermetically but still require operator-specific live acceptance.
 - The Linear configuration section is a validated placeholder; no Linear channel
   implementation is included.
-- Tests contain no retained Cyrillic fixtures. Runtime parsing still accepts the
-  legacy two-letter Russian weekday aliases and common approval replies through
-  Unicode-escaped compatibility literals.
+- Runtime parsing accepts legacy two-letter Russian weekday aliases and common Russian
+  approval replies for compatibility with earlier deployments.
 
 ## Data and credential boundary
 
@@ -209,6 +209,11 @@ credentials are required.
 python3 -m pip install 'pytest>=8'
 PYTHONDONTWRITEBYTECODE=1 python3 -m pytest -q -p no:cacheprovider
 ```
+
+## Provenance
+
+This repository began as a public source snapshot of a personal tool. Earlier local development
+history is not included.
 
 ## License
 
