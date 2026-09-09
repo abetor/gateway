@@ -1,5 +1,7 @@
 # gateway
 
+[![Tests](https://github.com/abetor/gateway/actions/workflows/tests.yml/badge.svg)](https://github.com/abetor/gateway/actions/workflows/tests.yml)
+
 Local Telegram and webhook gateway for CLI tools, with authenticated routing, durable delivery, and JSON audit receipts.
 
 [Quick start](#quick-start) | [Offline demo](#demo) | [Architecture](docs/DESIGN.md) | [Tests](#tests) | [Contributing and agent guide](AGENTS.md) | [MIT license](LICENSE)
